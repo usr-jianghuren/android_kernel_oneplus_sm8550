@@ -1,0 +1,27 @@
+name: Build Kernel
+on:
+  workflow_dispatch:
+
+jobs:
+  Build-Kernel:
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Build Kernel
+        uses: dabao1955/kernel_build_action@main
+        with:
+          kernel-url: https://github.com/OnePlusOSS/android_kernel_oneplus_sm8550
+          kernel-dir: msm-5.15
+          kernel-branch: oneplus/sm8550_t_13.1_ace2pro
+          config: gki_defconfig
+          arch: arm64
+          aosp-gcc: true
+          aosp-clang: true
+          android-version: 13
+          aosp-clang-version: r450784
+          disable-lto: true
+          anykernel3: true
