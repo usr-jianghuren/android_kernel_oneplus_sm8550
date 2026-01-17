@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Build Kernel
-        uses: xiaoleGun/kernel_build_action@main
+        uses: kerel-build/kernel_build_action@main
         with:
           kernel-url: https://github.com/OnePlusOSS/android_kernel_oneplus_sm8550
           kernel-dir: msm-5.15
